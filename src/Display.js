@@ -15,7 +15,7 @@ class Display extends React.Component {
             <div className="bookshelf">
             <ol className="books-grid"> 
              {
-                 <li>
+                
                     this.props.allNovelList.map((bookSearch) => 
                <li>
                   {
@@ -37,7 +37,6 @@ class Display extends React.Component {
                   }
                </li>
 
-                 </li>
              }
        </ol>
            </div>
