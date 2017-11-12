@@ -11,22 +11,37 @@ class Display extends React.Component {
         //let showingNovels
         return (
             <div className="list-books">
-           
-            <ol> 
+            <div className="list-books-content">
+            <div className="bookshelf">
+            <ol className="books-grid"> 
              {
-                 this.props.allNovelList.map((bookSearch) => 
+                 <li>
+                    this.props.allNovelList.map((bookSearch) => 
                <li>
+                  {
+                        bookSearch.shelf === "currentlyReading" &&
+                  (
+                        <li>
+                    
+                        <h2 className="bookshelf-title">Currently Reading</h2>
+                         <div className="book">
+                       <div className="book-top">
                     <p>{bookSearch.title}</p>
+                    <p>{bookSearch.authors}</p>
+                    
+                  </div>
+               </div>
 
-               <p>{bookSearch.authors}</p>
                </li>
-               
-                
-                
-              )
+                  ) 
+                  }
+               </li>
+
+                 </li>
              }
        </ol>
-          
+           </div>
+           </div>
           </div>
           
         
