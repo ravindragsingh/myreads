@@ -14,14 +14,14 @@ class Display extends React.Component {
             <div className="list-books-content">
             <div className="bookshelf">
             <ol className="books-grid"> 
-             {
-                
-                    this.props.allNovelList.map((bookSearch) => 
+             
+               {
+                 this.props.allNovelList.map((bookSearch) => 
                <li>
                   {
-                        bookSearch.shelf === "currentlyReading" &&
-                  (
-                        <li>
+                      bookSearch.shelf === "currentlyReading" &&
+                   (
+                         <li>
                     
                         <h2 className="bookshelf-title">Currently Reading</h2>
                          <div className="book">
@@ -33,11 +33,14 @@ class Display extends React.Component {
                </div>
 
                </li>
-                  ) 
+                   )
                   }
+                      
+                 
                </li>
-
-             }
+                 )
+                 } 
+                
        </ol>
            </div>
            </div>
