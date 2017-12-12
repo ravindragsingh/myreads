@@ -16,18 +16,29 @@ class BooksApp extends React.Component {
      * pages, as well as provide a good URL they can bookmark and share.
      */
     showSearchPage:false,
-    allNovelList:[]
-       
+    allNovelList:[],
+    //currentlyReading:[]
+    shelfs:['currentlyReading', 'wantToRead', 'read']
   }
+   
+  //const currentlyReading = allNovelList.filter((num) => num.shelf == "currentlyReading") 
+
    componentDidMount() {
     BooksAPI.getAll().then((allNovelList) => {
       this.setState({ allNovelList })
     })
-  //console.log(allNovelList)
+  console.log(this.state.allNovelList.shelf)
   }
+  
+  
   
  
   render() {
+    
+    // const currentlyReading = this.state.allNovelList.filter((pass) => pass.shelf== "currentlyReading")
+    // const readReading = this.state.allNovelList.filter((read) => read.shelf== "Read")
+    // const wantToRead = this.state.allNovelList.filter((want) => want.shelf== "wantToRead")
+
     return (
       
       <div>
@@ -42,7 +53,19 @@ class BooksApp extends React.Component {
          
         ) : (
           <div>
-            <Display allNovelList = {this.state.allNovelList}/>
+                       
+            {/* {this.state.allNovelList.filter((pass) => pass.shelf== "currentlyReading")} */}
+              {this.state.shelfs.map((shelf) =>
+                  <Display 
+                  shelfDisplay = {this.state.allNovelList.filter((book) => book.shelf== shelf )} 
+                  bookTitle = {shelf}
+                  /> 
+             
+              )}
+           
+            {/* <Display shelf = {readReading} />
+            <Display shelf = {wantToRead} /> */}
+            
             
             
             <div className="open-search">
