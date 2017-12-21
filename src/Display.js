@@ -4,7 +4,7 @@ import { getAll } from './BooksAPI'
 import Header from './Header'
 
 
-String.prototype.capitalize = function() {
+String.prototype.capitalize = function () {
     return this.charAt(0).toUpperCase() + this.slice(1);
 }
 class Display extends React.Component {
@@ -21,9 +21,6 @@ class Display extends React.Component {
                                 <h2 className="bookshelf-title">{this.props.bookTitle.capitalize()}</h2>
                                 <div className="bookshelf-books">
                                     <ol className="books-grid">
-
-
-
                                         {this.props.shelfDisplay.map((bookSearch) =>
                                             <li>
                                                 <div>
@@ -56,6 +53,13 @@ class Display extends React.Component {
 
 
                                     </ol>
+                                    <div className="open-search">
+                                        <Link to="/search"
+
+                                        >Add a book
+              </Link>
+
+                                    </div>
                                 </div>
                             </div>
                         </div>

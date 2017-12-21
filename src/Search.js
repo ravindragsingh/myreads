@@ -7,20 +7,12 @@ import escapeRegExp from 'escape-string-regexp'
 
 class Search extends Component {
 
-  // constructor(props) {
-  //   super(props)
-
-  //   this.state = {
-  //     title: '',
-  //     author: ''
-  //   }
-  // }
 
   state = {
-      query : ''
+    query: ''
   }
-    
-  
+
+
   updateQuery = (query) => {
     this.setState({ query: query.trim() })
   }
@@ -33,19 +25,22 @@ class Search extends Component {
 
   render() {
 
-    let showingContacts
-    if(this.state.query) {
+    let showingBooks
+    if (this.state.query) {
       const match = new RegExp(escapeRegExp(this.state.query), 'i')
-      showingContacts = this.props.bookList.filter((contact) => match.test(contact.title))
+      showingBooks = this.props.bookList.filter((contact) => match.test(contact.title))
     }
     else {
-      showingContacts = this.props.bookList
+      showingBooks = this.props.bookList
     }
 
     return (
-      
+
       <div>
-         {/* {JSON.strinify(this.state)}  */}
+
+
+
+        {/* {JSON.strinify(this.state)}  */}
         <div className="search-books">
           <div className="search-books-bar">
 
@@ -53,13 +48,13 @@ class Search extends Component {
               {
 
               }
-              <input 
-              type="text" 
-              placeholder="Search by title or author" 
-              value = {this.state.query}
-          onChange ={(event) => this.updateQuery(event.target.value) }
-          />
-                 
+              <input
+                type="text"
+                placeholder="Search by title or author"
+                value={this.state.query}
+                onChange={(event) => this.updateQuery(event.target.value)}
+              />
+
 
 
 
