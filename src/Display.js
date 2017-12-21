@@ -56,8 +56,8 @@ class Display extends React.Component {
                                     <div className="open-search">
                                         <Link to="/search"
 
-                                        >Add a book
-              </Link>
+                                            >Add a book
+                                        </Link>
 
                                     </div>
                                 </div>
