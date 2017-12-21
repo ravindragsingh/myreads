@@ -39,7 +39,7 @@ class BooksApp extends React.Component {
     return (
 
       <div>
-        <Header text="My-Reads" />
+        <Header text="My Reads" />
         <div className="app">
 
           <Route path="/" exact render={() => (
@@ -58,11 +58,11 @@ class BooksApp extends React.Component {
 
           />
 
-          <Route path="/search" component={Search} />
+          <Route path="/search" exact component={Search} />
 
           {this.state.showSearchPage ? (
             <div>
-              <Search
+              <Search bookList = {this.state.allNovelList}
               //onNavigate = {() =>this.setState({screen:'search'})}
               />
             </div>
